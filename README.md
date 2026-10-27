@@ -1,6 +1,34 @@
-# PyArch Graph
+# Graphobokon
 
-PyArch Graph is a project architecture explorer that runs as a GitHub Pages website or a local FastAPI application. Both modes reuse the same Python AST analyzer without importing or executing project code. The Pages version runs Python inside your browser and can read a selected folder or a public GitHub repository. The lightweight ring interface uses plain HTML, CSS, JavaScript, and inline SVG, without frontend packages or external fonts.
+Graphobokon turns your project's files, symbols, and dependencies into an interactive map. Use the GitHub Pages website directly in your browser, or run the FastAPI application locally. Both modes reuse the same Python AST analyzer without importing or executing project code.
+
+# Open the GitHub Pages Website
+
+**You do not need to install Python, Node.js, or this project to use the published website.**
+
+1. Open this repository's **Actions** tab and select a successful **Deploy GitHub Pages** run.
+2. Open the website URL shown for the **github-pages** deployment.
+3. The repository owner can also find the published URL under **Settings → Pages** and share it with visitors.
+
+A standard project website address looks like this; replace both placeholders with the actual repository details:
+
+```text
+https://<owner>.github.io/<repository>/
+```
+
+**If the website has not been deployed yet, the repository owner must complete the “Publish on GitHub Pages” steps below first.**
+
+# How to Use Graphobokon
+
+1. **Try it immediately:** click **Explore demo** to open an example project without waiting for the Python runtime.
+2. **Map a GitHub repository:** paste a public repository URL into the input and click **Map project**.
+3. **Map your own files:** click **Choose folder** and select a project directory. Files are analyzed on your device, not uploaded. Do not type a local folder path into the website's GitHub URL field.
+4. **Explore the results:** select a file in the graph or explorer to inspect its symbols and connections. Click **View source** to read its code. Use the file filter to search, drag to pan, and scroll to zoom.
+5. **Save the graph:** click **Export JSON** to download the analysis. Use the theme button to switch between light and dark mode.
+
+**The first scan downloads the browser Python runtime, so keep an internet connection and allow a moment for it to load.** Browser scans support public repositories only, with limits of 2,000 eligible files, 2 MB per file, and 30 MB total. If GitHub rate-limits a scan, download the repository and use **Choose folder** instead.
+
+The lightweight ring interface uses plain HTML, CSS, JavaScript, and inline SVG, without frontend packages or external fonts.
 
 ## Architecture
 
