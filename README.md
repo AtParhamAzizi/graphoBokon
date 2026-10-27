@@ -17,8 +17,8 @@ https://atparhamazizi.github.io/graphoBokon/
 ```
 
 **If the website has not been deployed yet, the repository owner must complete the “Publish on GitHub Pages” steps below first.**
-https://github.com/AtParhamAzizi/graphoBokon/tree/main/pics#:~:text=..-,Screenshot%202026%2D10%2D27%20125250.png,-Add%20files%20via
-https://github.com/AtParhamAzizi/graphoBokon/tree/main/pics#:~:text=1%20minute%20ago-,Screenshot%202026%2D10%2D27%20125334.png,-Add%20files%20via
+![description](https://github.com/AtParhamAzizi/graphoBokon/blob/main/pics/Screenshot%202026-10-27%20125250.png)
+![description](https://github.com/AtParhamAzizi/graphoBokon/blob/main/pics/Screenshot%202026-10-27%20125334.png)
 # How to Use Graphobokon
 
 1. **Try it immediately:** click **Explore demo** to open an example project without waiting for the Python runtime.
