@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en" data-theme="light" data-mode="backend">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GraphBakon · Code Atlas</title>
+  <link rel="stylesheet" href="style.css">
+  <script>document.documentElement.dataset.theme = localStorage.getItem("pyarch-lite-theme") || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");</script>
+</head>
+<body>
+  <div class="blobs" aria-hidden="true"><i></i><i></i><i></i></div>
+
+  <header class="glass topbar">
+    <div class="brand"><span class="drop" aria-hidden="true"></span><div><b>GraphBakon</b><small>YOUR CODE, CONNECTED.</small></div></div>
+    <form id="scan-form" class="scan">
+      <input id="path" aria-label="Project folder or GitHub URL" placeholder="Project folder or GitHub URL" required>
+      <input id="exclude" aria-label="Exclusions, comma separated" placeholder="Exclude: .venv, tests...">
+      <button class="pill primary" type="submit">Map project ↗</button>
+      <button class="pill" id="choose-folder" type="button" hidden>Choose folder</button>
+    </form>
+    <button id="theme" class="pill round" type="button" aria-label="Toggle theme">◐</button>
+  </header>
+
+  <div class="site-tools">
+    <p id="mode-note" class="muted">Local scanner: enter a folder path or GitHub URL.</p>
+    <button id="demo" class="pill" type="button">Explore demo</button>
+    <button id="cancel-scan" class="pill" type="button" hidden>Cancel scan</button>
+    <span id="scan-status" role="status" aria-live="polite"></span>
+  </div>
+  <input id="folder-input" type="file" webkitdirectory multiple hidden aria-label="Choose a project folder">
+  <div id="progress" class="progress" hidden><span></span></div>
+
+  <main class="layout">
+    <aside class="glass panel">
+      <div class="panel-heading"><span class="eyebrow">01 / EXPLORER</span><span class="status-dot" aria-hidden="true"></span></div>
+      <h1>Little files.<br>Big picture.</h1>
+      <div class="stats" id="stats">
+        <div><b>–</b><small>files</small></div>
+        <div><b>–</b><small>symbols</small></div>
+        <div><b>–</b><small>links</small></div>
+      </div>
+      <input id="filter" class="filter" aria-label="Filter files" placeholder="Find a file...">
+      <ul id="files" class="files"><li class="muted">Analyze a project to begin.</li></ul>
+    </aside>
+
+    <section class="glass ring-wrap">
+      <div class="map-heading"><span class="eyebrow">THE DEPENDENCY ATLAS</span><span class="map-badge">RING VIEW</span></div>
+      <svg id="ring" viewBox="-500 -500 1000 1000" role="img" aria-label="Dependency ring"></svg>
+      <div class="zoom glass">
+        <button type="button" data-zoom="in" aria-label="Zoom in" title="Zoom in (+)">+</button>
+        <button type="button" data-zoom="fit" id="zoom-level" aria-label="Fit ring" title="Fit (0)">100%</button>
+        <button type="button" data-zoom="out" aria-label="Zoom out" title="Zoom out (−)">−</button>
+      </div>
+      <div id="hint" class="hint"><div class="orbit" aria-hidden="true"><i></i><i></i><i></i></div><span class="eyebrow">A NEW PERSPECTIVE</span><h2>Find your code’s<br>hidden connections.</h2><p>Map a project to turn files into a constellation.<br>Follow the threads. See what holds it together.</p><span class="hint-step">Add a folder or GitHub URL to begin</span></div>
+      <div class="map-caption"><span class="status-dot" aria-hidden="true"></span> FILES &nbsp; / &nbsp; DEPENDENCIES</div>
+      <a id="export" class="pill export" hidden download>Export JSON</a>
+    </section>
+
+    <aside class="glass panel inspector" id="inspector">
+      <span class="eyebrow">02 / INSPECTOR</span><div class="inspector-empty"><span class="inspect-symbol" aria-hidden="true">⌘</span><h2>Follow your curiosity.</h2><p class="muted">Pick a bead or a file to explore its symbols, source, and connections.</p><span class="eyebrow">THE DETAILS LIVE HERE</span></div>
+    </aside>
+  </main>
+
+  <div id="toast" class="glass toast" hidden></div>
+  <script src="browser-client.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

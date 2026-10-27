@@ -1,0 +1,5 @@
+[project]
+name = "pyarch-demo"
+version = "0.2.0"
+description = "A connected architecture demo covering every PyArch relationship type"
+requires-python = ">=3.10"
