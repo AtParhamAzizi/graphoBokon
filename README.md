@@ -13,7 +13,7 @@ Graphobokon turns your project's files, symbols, and dependencies into an intera
 A standard project website address looks like this; replace both placeholders with the actual repository details:
 
 ```text
-https://<owner>.github.io/<repository>/
+https://atparhamazizi.github.io/graphoBokon/
 ```
 
 **If the website has not been deployed yet, the repository owner must complete the “Publish on GitHub Pages” steps below first.**
